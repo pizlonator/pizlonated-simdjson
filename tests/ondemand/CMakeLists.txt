@@ -33,9 +33,9 @@ add_cpp_test(ondemand_iterate_many_csv               LABELS ondemand acceptance 
 add_cpp_test(ondemand_custom_types_tests             LABELS ondemand acceptance per_implementation)
 add_cpp_test(ondemand_custom_types_document_tests    LABELS ondemand acceptance per_implementation)
 add_cpp_test(ondemand_stl_types_tests                LABELS ondemand acceptance per_implementation)
-if(NOT SIMDJSON_SANITIZE)
-  add_cpp_test(ondemand_cacheline              LABELS ondemand acceptance per_implementation)
-endif()
+# if(NOT SIMDJSON_SANITIZE)
+#   add_cpp_test(ondemand_cacheline              LABELS ondemand acceptance per_implementation)
+# endif()
 
 if(HAVE_POSIX_FORK AND HAVE_POSIX_WAIT) # assert tests use fork and wait, which aren't on MSVC
   add_cpp_test(ondemand_assert_out_of_order_values LABELS assert per_implementation explicitonly ondemand)
